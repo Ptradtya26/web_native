@@ -1,9 +1,10 @@
 <?php
+//include_once 'models/Produk.php';
+//include_once 'koneksi.php';
 
 
-
-$model = new Produk();
-$data_produk = $model->dataProduk();
+$model = new pesanan();
+$pesanan = $model->Pesanan();
 
 //foreach($data_produk as $row){
     //print $row['kode'];
@@ -30,42 +31,30 @@ $data_produk = $model->dataProduk();
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Kode</th>
-                                            <th>Nama</th>
-                                            <th>Harga beli</th>
-                                            <th>Harga jual</th>
-                                            <th>Stok</th>
-                                            <th>Minimal Stok</th>
-                                            <th>Jenis produk</th>
+                                            <th>id</th>
+                                            <th>Tanggal</th>
+                                            <th>Total</th>
+                                            <th>Pelanggan Id</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                        <th>No</th>
-                                        <th>Kode</th>
-                                            <th>Nama</th>
-                                            <th>Harga beli</th>
-                                            <th>Harga jual</th>
-                                            <th>Stok</th>
-                                            <th>Minimal Stok</th>
-                                            <th>Jenis produk</th>
+                                        <th>id</th>
+                                            <th>Tanggal</th>
+                                            <th>Total</th>
+                                            <th>Pelanggan Id</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <?php
                                         $no = 1;
-                                        foreach($data_produk as $row){
+                                        foreach($pesanan as $row){
                                         ?>
                                         <tr>
-                                        <td><?=$no?></td>
-                                        <td><?=$row['kode']?></td>
-                                        <td><?=$row['nama']?></td>
-                                        <td><?=$row['harga_beli']?></td>
-                                        <td><?=$row['harga_jual']?></td>
-                                        <td><?=$row['stok']?></td>
-                                        <td><?=$row['min_stok']?></td>
-                                        <td><?=$row['jenis_produk_id']?></td>
+                                        <td><?= $row['id']?></td>
+                                        <td><?= $row['tanggal']?></td>
+                                        <td><?= $row['total']?></td>
+                                        <td><?= $row['pelanggan_id']?></td>
                                         </tr>
                                         <?php
                                         $no++;

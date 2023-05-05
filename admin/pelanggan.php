@@ -1,9 +1,10 @@
 <?php
+//include_once 'models/Produk.php';
+//include_once 'koneksi.php';
 
 
-
-$model = new Produk();
-$data_produk = $model->dataProduk();
+$model = new pelanggan();
+$pelanggan = $model->Pelanggan();
 
 //foreach($data_produk as $row){
     //print $row['kode'];
@@ -30,42 +31,46 @@ $data_produk = $model->dataProduk();
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
+                                            <th>id</th>
                                             <th>Kode</th>
-                                            <th>Nama</th>
-                                            <th>Harga beli</th>
-                                            <th>Harga jual</th>
-                                            <th>Stok</th>
-                                            <th>Minimal Stok</th>
-                                            <th>Jenis produk</th>
+                                            <th>Nama Pelanggan</th>
+                                            <th>Alamat</th>
+                                            <th>Jenis kelamin</th>
+                                            <th>Tempat Lahir</th>
+                                            <th>Tanggal Lahir</th>
+                                            <th>Email</th>
+                                            <th>Kartu Id</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                        <th>No</th>
-                                        <th>Kode</th>
-                                            <th>Nama</th>
-                                            <th>Harga beli</th>
-                                            <th>Harga jual</th>
-                                            <th>Stok</th>
-                                            <th>Minimal Stok</th>
-                                            <th>Jenis produk</th>
+                                        <th>id</th>
+                                            <th>Kode</th>
+                                            <th>Nama Pelanggan</th>
+                                            <th>Alamat</th>
+                                            <th>Jenis kelamin</th>
+                                            <th>Tempat Lahir</th>
+                                            <th>Tanggal Lahir</th>
+                                            <th>Email</th>
+                                            <th>Kartu Id</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <?php
                                         $no = 1;
-                                        foreach($data_produk as $row){
+                                        foreach($pelanggan as $row){
                                         ?>
                                         <tr>
-                                        <td><?=$no?></td>
-                                        <td><?=$row['kode']?></td>
-                                        <td><?=$row['nama']?></td>
-                                        <td><?=$row['harga_beli']?></td>
-                                        <td><?=$row['harga_jual']?></td>
-                                        <td><?=$row['stok']?></td>
-                                        <td><?=$row['min_stok']?></td>
-                                        <td><?=$row['jenis_produk_id']?></td>
+                                        <td><?= $row['id'] ?></td>
+                                        <td><?= $row['kode']?></td>
+                                        <td><?= $row['nama_pelanggan']?></td>
+                                        <td><?= $row['alamat']?></td>
+                                        <td><?= $row['jk']?></td>
+                                        <td><?= $row['tmp_lahir']?></td>
+                                        <td><?= $row['tgl_lahir']?></td>
+                                        <td><?= $row['email']?></td>
+                                        <td><?= $row['kartu_id']?></td>
+
                                         </tr>
                                         <?php
                                         $no++;
