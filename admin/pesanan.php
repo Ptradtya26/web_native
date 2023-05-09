@@ -31,18 +31,20 @@ $pesanan = $model->Pesanan();
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
+                                            <th>ID</th>
                                             <th>Tanggal</th>
                                             <th>Total</th>
                                             <th>Pelanggan Id</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                        <th>id</th>
+                                        <th>ID</th>
                                             <th>Tanggal</th>
                                             <th>Total</th>
                                             <th>Pelanggan Id</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -55,6 +57,15 @@ $pesanan = $model->Pesanan();
                                         <td><?= $row['tanggal']?></td>
                                         <td><?= $row['total']?></td>
                                         <td><?= $row['pelanggan_id']?></td>
+                                        <td>
+                                                <form action="pesanan_controller.php" method="post">
+                                                    <a class="btn btn-info btn-sm" href="index.php?url=pesanan_detail&id=<?= $row ['id'] ?>">Detail</a>
+                                                    <a class="btn btn-warning btn-sm">Ubah</a>
+                                                    <a class="btn btn-danger btn-sm">Hapus</a>
+
+                                                    <input type="hidden" name="idx" value="<?= $row['id'] ?>">
+                                                </form>
+                                            </td>
                                         </tr>
                                         <?php
                                         $no++;

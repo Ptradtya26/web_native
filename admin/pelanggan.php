@@ -31,7 +31,7 @@ $pelanggan = $model->Pelanggan();
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
+                                            <th>ID</th>
                                             <th>Kode</th>
                                             <th>Nama Pelanggan</th>
                                             <th>Alamat</th>
@@ -40,11 +40,12 @@ $pelanggan = $model->Pelanggan();
                                             <th>Tanggal Lahir</th>
                                             <th>Email</th>
                                             <th>Kartu Id</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                        <th>id</th>
+                                        <th>ID</th>
                                             <th>Kode</th>
                                             <th>Nama Pelanggan</th>
                                             <th>Alamat</th>
@@ -53,6 +54,7 @@ $pelanggan = $model->Pelanggan();
                                             <th>Tanggal Lahir</th>
                                             <th>Email</th>
                                             <th>Kartu Id</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -61,7 +63,7 @@ $pelanggan = $model->Pelanggan();
                                         foreach($pelanggan as $row){
                                         ?>
                                         <tr>
-                                        <td><?= $row['id'] ?></td>
+                                        <td><?= $row['id']?></td>
                                         <td><?= $row['kode']?></td>
                                         <td><?= $row['nama_pelanggan']?></td>
                                         <td><?= $row['alamat']?></td>
@@ -70,7 +72,15 @@ $pelanggan = $model->Pelanggan();
                                         <td><?= $row['tgl_lahir']?></td>
                                         <td><?= $row['email']?></td>
                                         <td><?= $row['kartu_id']?></td>
+                                        <td>
+                                                <form action="pelanggan_controller.php" method="post">
+                                                    <a class="btn btn-info btn-sm" href="index.php?url=pelanggan_detail&id=<?= $row ['id'] ?>">Detail</a>
+                                                    <a class="btn btn-warning btn-sm">Ubah</a>
+                                                    <a class="btn btn-danger btn-sm">Hapus</a>
 
+                                                    <input type="hidden" name="idx" value="<?= $row['id'] ?>">
+                                                </form>
+                                            </td>
                                         </tr>
                                         <?php
                                         $no++;
