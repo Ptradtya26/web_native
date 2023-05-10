@@ -73,8 +73,9 @@ $data_produk = $model->dataProduk();
                                         <td>
                                             <form action="produk_controller.php" method="POST">
                                             <a class="btn btn-info btn-sm" href="index.php?url=product_detail&id=<?= $row ['id'] ?>">Detail</a>
-                                            <a class="btn btn-info btn-sm">Ubah</a>
-                                            <a class="btn btn-info btn-sm">Hapus</a>
+                                            <a class="btn btn-info btn-sm" href="index.php?url=product_form&idedit=<?= $row ['id'] ?>">Ubah</a>
+                                            <button type="submit" class="btn btn-info btn-sm" name="proses" value="hapus" 
+                                            onclick="return confirm('Anda Yakin Akan Dihapus?')">Hapus</button>
 
 
                                             <input type="hidden" name="idx" value="<?= $row['id']?>">

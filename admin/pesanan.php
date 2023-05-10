@@ -60,8 +60,9 @@ $pesanan = $model->Pesanan();
                                         <td>
                                                 <form action="pesanan_controller.php" method="post">
                                                     <a class="btn btn-info btn-sm" href="index.php?url=pesanan_detail&id=<?= $row ['id'] ?>">Detail</a>
-                                                    <a class="btn btn-warning btn-sm">Ubah</a>
-                                                    <a class="btn btn-danger btn-sm">Hapus</a>
+                                                    <a class="btn btn-info btn-sm" href="index.php?url=pesanan_form&idedit=<?= $row ['id'] ?>">Ubah</a>
+                                                    <button type="submit" class="btn btn-info btn-sm" name="proses" value="hapus" 
+                                            onclick="return confirm('Anda Yakin Akan Dihapus?')">Hapus</button>
 
                                                     <input type="hidden" name="idx" value="<?= $row['id'] ?>">
                                                 </form>

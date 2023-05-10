@@ -4,10 +4,22 @@ $model = new Pesanan();
 $pesanan = $model->getPesanan($id);
 ?>
 
-<div>
-    <br>
-    <h3>ID : <?= $pesanan['id'] ?></h3>
-    <h3>Tanggal : <?= $pesanan['tanggal'] ?></h3>
-    <h3>Total : <?= $pesanan['total'] ?></h3>
-    <h3>Pelanggan ID :<?= $pesanan['pelanggan_id'] ?></h3>
-</div>
+
+<table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Tanggal </th>
+                                            <th>Total</th>
+                                            <th>Pelanggan ID</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td>ID : <?= $pesanan['id'] ?></td>
+                                          <td>Tanggal : <?= $pesanan['tanggal'] ?></td>
+                                            <td>Total : <?= $pesanan['total'] ?></td>
+                                             <td>Pelanggan ID :<?= $pesanan['pelanggan_id'] ?></td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
