@@ -4,15 +4,32 @@ $model = new Pelanggan();
 $pelanggan = $model->getPelanggan($id);
 ?>
 
-<div>
-    <br>
-    <h3>ID : <?= $pelanggan['id'] ?></h3>
-    <h3>Kode : <?= $pelanggan['kode'] ?></h3>
-    <h3>Nama Pelanggan : <?= $pelanggan['nama_pelanggan'] ?></h3>
-    <h3>Alamat : <?= $pelanggan['alamat'] ?></h3>
-    <h3>Jenis Kelamin : <?= $pelanggan['jk'] ?></h3>
-    <h3>Tempat Lahir : <?= $pelanggan['tmp_lahir'] ?></h3>
-    <h3>Tanggal Lahir : <?= $pelanggan['tgl_lahir'] ?></h3>
-    <h3>Email : <?= $pelanggan['email'] ?></h3>
-    <h3>Kartu ID : <?= $pelanggan['kartu_id'] ?></h3>
-</div>
+<table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Kode</th>
+                                            <th>Nama Pelanggan</th>
+                                            <th>Alamat</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Tempat Lahir</th>
+                                            <th>Tanggal Lahir</th>
+                                            <th>Email</th>
+                                            <th>Kartu ID</th>
+                                        </tr>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td><?= $pelanggan['id'] ?></td>
+    <td><?= $pelanggan['kode'] ?></td>
+    <td><?= $pelanggan['nama_pelanggan'] ?></td>
+    <td><?= $pelanggan['alamat'] ?></td>
+    <td><?= $pelanggan['jk'] ?></td>
+    <td><?= $pelanggan['tmp_lahir'] ?></td>
+    <td><?= $pelanggan['tgl_lahir'] ?></td>
+    <td><?= $pelanggan['email'] ?></td>
+    <td><?= $pelanggan['kartu_id'] ?></td>
+                                        </tr>
+                                    </tbody>
+                                    </table>

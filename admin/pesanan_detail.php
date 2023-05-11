@@ -16,10 +16,10 @@ $pesanan = $model->getPesanan($id);
                                     </thead>
                                     <tbody>
                                         <tr>
-                                        <td>ID : <?= $pesanan['id'] ?></td>
-                                          <td>Tanggal : <?= $pesanan['tanggal'] ?></td>
-                                            <td>Total : <?= $pesanan['total'] ?></td>
-                                             <td>Pelanggan ID :<?= $pesanan['pelanggan_id'] ?></td>
+                                        <td><?= $pesanan['id'] ?></td>
+                                          <td><?= $pesanan['tanggal'] ?></td>
+                                            <td><?= $pesanan['total'] ?></td>
+                                             <td><?= $pesanan['pelanggan_id'] ?></td>
                                         </tr>
                                     </tbody>
                                     </table>
