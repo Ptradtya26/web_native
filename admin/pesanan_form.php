@@ -25,7 +25,7 @@ $pes = !empty($idedit) ? $obj_pesanan->getPesanan($idedit) : array() ;
         </div>
       </div>
       <div class="form-group row">
-        <label for="text3" class="col-4 col-form-label">Pelanggan</label> 
+        <label for="text3" class="col-4 col-form-label">Pelanggan ID</label> 
         <div class="col-8">
           <input id="pelanggan_id" name="pelanggan_id" type="text" class="form-control" value="<?= $pes['pelanggan_id']?>">
         </div>

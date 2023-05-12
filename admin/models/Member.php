@@ -6,7 +6,7 @@ class Member{
         $this->koneksi = $dbh;
     }
     public function ceklogin($data){
-        $sql = "SELECT * from member WHERE username = ? AND password = ?";
+        $sql = "SELECT * from member WHERE username = ? AND password = SHA1(MD5(SHA1(?)))";
         $ps = $this->koneksi->prepare($sql);
         $ps->execute($data);
         $rs = $ps->fetch();

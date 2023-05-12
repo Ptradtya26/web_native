@@ -7,6 +7,8 @@ include_once 'models/Jenis_Produk.php';
 include_once 'models/Member.php';
 include_once 'models/Produk.php';
 include_once 'koneksi.php';
+$sesi = $_SESSION['MEMBER'];
+if(isset($sesi)){
 //memanggil dan memproses file bagian atas
 include_once 'top.php';
 
@@ -34,5 +36,8 @@ include_once 'menu.php';
 </div>
 <?php
 //ini memanggil dan memproses file bagian bawah atau footer
-include_once 'bottom.php'
+include_once 'bottom.php';
+} else {
+    echo '<script> alert("anda tidak boleh masuk");history.back();</script>';
+}
 ?>

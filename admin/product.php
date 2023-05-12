@@ -31,7 +31,12 @@ if(isset($sesi)){
                                 <!--<i class="fas fa-table me-1"></i>
                                 DataTable Example-->
                                 <!-- membuat tombol mengarahkan ke file produk_form.php-->
+                                <?php
+                                                if($sesi['role'] != 'staff'){
+                                                    ?>
+
                                 <a href="index.php?url=product_form" class="btn btn-primary btn-sm"> Tambah </a>
+                                <?php } ?>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -77,10 +82,13 @@ if(isset($sesi)){
                                         <td><?=$row['jenis_produk_id']?></td>
                                         <td>
                                             <form action="produk_controller.php" method="POST">
-                                            <?php
-                                                if($sesi['role'] != 'staff'){
-                                                    ?>
+                                           
                                             <a class="btn btn-info btn-sm" href="index.php?url=product_detail&id=<?= $row ['id'] ?>">Detail</a>
+                            
+                                            <?php
+                                                if($sesi['role'] == 'admin'){
+                                                    ?>
+                                       
                                             <a class="btn btn-info btn-sm" href="index.php?url=product_form&idedit=<?= $row ['id'] ?>">Ubah</a>
                                             <button type="submit" class="btn btn-info btn-sm" name="proses" value="hapus" 
                                             onclick="return confirm('Anda Yakin Akan Dihapus?')">Hapus</button>

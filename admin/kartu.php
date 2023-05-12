@@ -63,11 +63,17 @@ $kartu = $model->Kartu();
                                         <td>
                                                 <form action="kartu_controller.php" method="post">
                                                     <a class="btn btn-info btn-sm" href="index.php?url=kartu_detail&id=<?= $row ['id'] ?>">Detail</a>
+                                                    
+                                                    <?php
+                                                if($sesi['role'] == 'admin'){
+                                                    ?>
+                                                    
                                                     <a class="btn btn-info btn-sm" href="index.php?url=kartu_form&idedit=<?= $row ['id'] ?>">Ubah</a>
                                             <button type="submit" class="btn btn-info btn-sm" name="proses" value="hapus" 
                                             onclick="return confirm('Anda Yakin Akan Dihapus?')">Hapus</button>
 
                                                     <input type="hidden" name="idx" value="<?= $row['id'] ?>">
+                                                    <?php } ?>
                                                 </form>
                                             </td>
                                         </tr>

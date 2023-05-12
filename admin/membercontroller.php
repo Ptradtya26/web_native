@@ -15,9 +15,9 @@ $model = new Member();
 $rs = $model->cekLogin($data); //ceklogin ini diarahkan ke models/Member.php
 if (!empty($rs)){
     $_SESSION['MEMBER'] = $rs;
-    header('location:index.php?url=product');
+    header('location:http://localhost/webnativ/admin/index.php?url=product');
 }
 else{
-    echo '<script> Alert("user/password anda salah");history.back();</script>';
+    echo '<script> alert("user/password anda salah");history.back();</script>';
 }
 ?>
